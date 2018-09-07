@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frank.com:8001</title>
+</head>
+<body>
+    <h3>余额：<span id=amount>100</span></h3>
+    <button id="button">付款1元</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        button.addEventListener("click", function(e){
+        var script = document.createElement("script")
+        script.src = 'http://jack.com:8002/pay'
+        document.body.appendChild(script)
+        script.onload = function(e){
+            alert("success")
+            e.currentTarget.remove()
+        }
+  
+    })
+    </script>
+</body>
+</html>  
